@@ -52,6 +52,11 @@ class WorkAdmin(CustomView):
         'priority': form.Select2Field('priority', choices=[(0, '高'), (1, '中'), (2, '低')])
     }
 
+    from flask_admin.actions import action
+    @action('myaction', 'MyAction', '自定义功能的描述')
+    def action_approve(self, ids):
+        print(ids)
+
 
 # 自定义视图
 from flask_admin.base import BaseView, expose
