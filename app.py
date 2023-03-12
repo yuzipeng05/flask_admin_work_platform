@@ -46,6 +46,8 @@ class WorkAdmin(CustomView):
     form_overrides = dict(content=CKEditorField)  # 重写表单字段，将 text 字段设为 CKEditorField
     column_searchable_list = ('title', 'owner', 'content')
     column_filters = ('time', 'priority')
+    can_view_details = True
+    can_export = True
     form_extra_fields = {
         'priority': form.Select2Field('priority', choices=[(0, '高'), (1, '中'), (2, '低')])
     }
@@ -86,7 +88,7 @@ admin.add_view(MyView(myurl='http://www.google.cn/', name='谷歌', endpoint='2'
 
 # 文件管理
 from flask_admin.contrib.fileadmin import FileAdmin
-path = 'D:\\python_project\\flask-admin\\examples\\custom-layout'
+path = 'D:\\'
 admin.add_view(FileAdmin(path, 'file', name='文件管理'))
 
 
