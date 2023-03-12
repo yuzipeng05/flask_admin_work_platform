@@ -2,11 +2,7 @@
 
 ## 1、基础功能版
 
-之前已经写过Flask_Admin库的基础应用，
-
-[《【Python成长之路】基于Flask-admin库，编写个人工作平台代码详述》]: https://mp.weixin.qq.com/s?__biz=MzI5ODQxNTA0OA==&amp;mid=2247484442&amp;idx=1&amp;sn=3457ea9638c14052ad4b833f0d62374f&amp;chksm=eca762bddbd0ebab6451aece17a9510555300579ebc454e3cfd5d1a3fe218f11ecb2971035d9&amp;token=1497085470&amp;lang=zh_CN#rd
-
-但是在后续工作使用中，发现有新的需求功能需要添加，因此有了此篇的进阶版。
+之前已经写过Flask_Admin库的基础应用，[《【Python成长之路】基于Flask-admin库，编写个人工作平台代码详述》](https://mp.weixin.qq.com/s?__biz=MzI5ODQxNTA0OA==&amp;mid=2247484442&amp;idx=1&amp;sn=3457ea9638c14052ad4b833f0d62374f&amp;chksm=eca762bddbd0ebab6451aece17a9510555300579ebc454e3cfd5d1a3fe218f11ecb2971035d9&amp;token=1497085470&amp;lang=zh_CN#rd)。但是在后续工作使用中，发现有新的需求功能需要添加，因此有了此篇的进阶版。
 
 进阶版主要功能如下：
 
@@ -18,7 +14,7 @@
 
 **（4）支持搜索结果总数显示**
 
-**（5）改进表格展示方式**
+**（5）表格内容自适应**
 
 
 
@@ -116,7 +112,7 @@ class WorkAdmin(CustomView):
 
 当前可以对h4标签进行添加sytle，从而对显示文字颜色、大小等修改，具体css代码可自行百度。
 
-## 6、优化表格展示方式
+## 6、优化表格展示
 
 当前框架对超过一定长度的单元格内容会自动设置换行，但是如果表格标题太多，比如10+，其中又有多个列是超长文件，就会有滑动条生成。虽然也能查看，但是对用户体验不佳，比如我自己更愿意所有数据在一页内呈现。
 
