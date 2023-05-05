@@ -488,29 +488,33 @@ onSubmit() {
 
 这里再补充说明下，回传数据data的内容，即name/region都是form中定义好的。当前仅以name/region参数做演示，所有字段都可以进行传递。
 
-另外，重置功能可 以简单地通过以下代码实现，但是有2个前置条件：
-
-```
-this.$refs[formName].resetFields();
-```
+另外，重置功能可以简单地通过以下代码实现，但是有2个前置条件：
 
 **1、form组件上必须要有ref**
 
 **2、form-item上必须要有prop属性**
 
-即需要有以下 代码
+```html
+# body中重置代码
+<el-button @click="resetForm('form')">重置</el-button>
+
+# script中重置代码
+this.$refs[formName].resetFields();
+```
+
+即需要body中有以下代码
 
 ```html
-    <el-form ref="form" :model="form" label-width="80px">
+<el-form ref="form" :model="form" label-width="80px">
     xxx
-    <el-form-item label="活动名称" prop="name">
+<el-form-item label="活动名称" prop="name">
 ```
 
 ### 3、后端获取数据
 
 **python代码如下**
 
-```
+```python
 from flask_cors import CORS
 from flask import request
 
@@ -522,6 +526,7 @@ def test():
     if request.method == 'POST':
         print("********** post *************")
         data = request.get_json(silent=True)
+        # 获取数据后如何处理，可自行编写代码
         print(data['name'])
         print(data['region'])
     return render_template('form.html')
@@ -533,7 +538,7 @@ def test():
 
 github地址如下：
 
-
+https://github.com/yuzipeng05/flask_admin_work_platform
 
 
 
